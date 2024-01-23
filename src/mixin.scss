@@ -1,0 +1,78 @@
+@import "variables.scss";
+
+@mixin telefono{
+    @media (min-width: $telefono){
+        @content
+    }
+};
+
+@mixin tablet{
+    @media (min-width: $tablet){
+        @content
+    }
+};
+
+@mixin desktop{
+    @media (min-width: $desktop){
+        @content
+    }
+};
+
+
+
+@mixin grid( $columnas, $separacion){
+    display: grid;
+    grid-template-columns: repeat( $columnas, 1fr);
+    gap: $separacion;
+};
+
+
+
+@mixin bgImage ($url, $colorDegradado){
+    background-image: linear-gradient($colorDegradado 0%, $colorDegradado 100%) , url($url);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 70rem;
+}
+
+
+@mixin boton ( $color, $texto){
+    background-color: $color;
+    font-size: 1.2rem;
+    padding: 0.8rem 2rem;
+    border-radius: 0.7rem;
+    font-weight: 700;
+    display: block;
+    text-align: center;
+    color: $texto;
+    text-decoration: none;
+    transition: background-color 0.3s ease ;
+    border: none;
+    width: 100% ;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+@mixin headingBorder ( $colorTexto, $colorLinea){
+    display: inline-block;
+    margin-top: 2.5rem;
+    color: $colorTexto;
+    
+    &::after{
+        content: "";
+        background-color: $colorLinea;
+        display: block;
+        width: 104%;
+        height: 0.35rem;
+        margin-top: -0.55rem;
+    }
+}
+
+
+@mixin iconBg( $url){
+    background-image: url($url);
+    background-repeat: no-repeat;
+    background-position: 50% 2rem;
+    background-size: 8rem;
+}

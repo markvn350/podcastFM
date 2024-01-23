@@ -1,0 +1,53 @@
+@use "../../../../mixin.scss" as m;
+@use "../../../../variables.scss" as v;
+
+
+.header{
+   
+    @include m.bgImage("../../../../assets/img/header.jpg", v.$secundarioOpacity);
+    background-position: center top;
+    padding: 4rem 1.5rem;
+    min-height: 40rem;
+    width: 100%;
+    height: auto;
+
+    &__logo{    
+        max-width: 10rem;
+         margin: 0px auto;
+         @include m.tablet{
+            margin: 0px;
+         }
+    }
+
+    &__contenido{
+        margin-top: 5rem;
+        color: v.$blanco;
+    }
+
+    &__heading{
+        margin: 1.5rem 0;
+        font-size: 3rem;
+        font-weight: 700;
+        @include m.tablet{
+            font-size: 3.5rem;
+            max-width: 65%;
+        }
+        @include m.desktop{
+            max-width: 45%;
+        }
+    }
+
+    &__boton{
+        @include m.boton(v.$primario, v.$secundario);
+        border-radius: 0%;
+        font-weight: 700;
+        font-size: 1.1rem;
+        @include m.tablet{
+            max-width: 40%;
+        }
+        @include m.desktop{
+            max-width: 30%;
+        }
+    }
+
+}
